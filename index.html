@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset ="UTF-8"/>
+        <meta http-equi="X-UA-Compatible" content="IE=edge"/>
+        <meta name ="viewreport" content="width-deice-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+          crossorigin="anonymous" />
+
+        <link rel="stylesheet" href="style.css" />
+
+
+
+
+        <title> Resume Generator</title>
+    </head>
+    <body >
+        <div class="image">
+            <p></p>
+        </div>
+        <div class ="container" id ="cv-form">
+        <h1 class ="text-center my-2">Resume Generator</h1>
+        <p class="text-center">By Vijay</p>
+
+        <div class ="row">
+            <div class ="col-md-6">
+
+                <h3>Personal Information</h3>
+
+                <div class ="form-group">
+                    <label for ="namefield">Your Name</label>
+                    <input
+                    type="text"
+                    id="namefield"
+                    placeholder="Enter here"
+                    class="form-control"
+                    />
+                </div>
+
+
+
+                <div class ="form-group">
+                    <label for ="contactfield">Your Contact numbers</label>
+                    <input
+                    type="text"
+                    id="contactfield"
+                    placeholder="Enter here"
+                    class="form-control"
+                    />
+                </div>
+
+                <div class ="form-group">
+                    <label for ="addressfield">Your Address</label>
+                    <textarea
+                    rows ="5"
+                    id="addressfield"
+                    placeholder="Enter here"
+                    class="form-control"
+                    ></textarea>
+                </div>
+
+                <p class=" text-secondary my-3">Important links</p>
+                <div class ="form-group">
+                    <label for ="linkedinfield">LinkedIn link</label>
+                    <input
+                    type="text"
+                    id="linkedinfield"
+                    placeholder="Enter here"
+                    class="form-control"
+                    />
+                </div>
+                
+                <div class ="form-group">
+                    <label for ="emailfield">Your E-mail ID</label>
+                    <input
+                    type="text"
+                    id="emailfield"
+                    placeholder="Enter here"
+                    class="form-control"
+                    />
+                </div>
+            </div>
+            <div class ="col-md-6">
+
+                <h3>Professional Information </h3>
+
+
+                <div class ="form-group mt-2" >
+                    <label for ="summaryfield">Professional Summary</label>
+                    <textarea placeholder="Enter here "class="form-control "
+                    id="psumfield"></textarea>
+                </div>
+                <div class ="form-group mt-2" id="ps">
+                    <label for ="professionalskillsfield">Professional Skills</label>
+                    <textarea placeholder="Enter here "class="form-control psField">
+
+                    </textarea>
+                    <div class = "container text-center mt-2" id ="psADDButton">
+                        <button onclick = "addNewPSField() "class ="btn btn-primary btn-sm">ADD</button>
+                    </div>
+                
+                </div>
+
+                <div class ="form-group mt-2" id="wh">
+                    <label for ="workhistoryskillsfield">Work History</label>
+                    <textarea placeholder="Enter here "class="form-control whField">
+                        
+                    </textarea>
+                    <div class = "container text-center mt-2" id = "whADDButton">
+                        <button onclick ="addNewWHField()" class ="btn btn-primary btn-sm">ADD</button>
+                    </div>
+                
+                </div>
+
+                <div class ="form-group mt-2" id="edu">
+                    <label for ="educationskillsfield">Education</label>
+                    <textarea placeholder="Enter here "class="form-control eduField">
+                        
+                    </textarea>
+                    <div class = "container text-center mt-2" id="eduADDButton">
+                        <button onclick = "addNewEDUField()"class ="btn btn-primary btn-sm">ADD</button>
+                    </div>
+                
+                </div>
+
+            </div>
+
+            </div>
+           
+            
+            <div class="container text-center mt-3">
+                <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+            </div>
+        </div>
+
+
+        <!-- cv template-->
+
+
+
+
+        <div class="container" id ="cv-template">
+            <div class="row">
+                <div class="bg-light clearfix">
+                    <!-- first col-->
+                    <div class="pull-left">
+                    <p ID="nameT" class="fname">Vijay Kumar <br>  Udhani</p>
+
+                    
+                    <div class ="pull-right"><p id="contactT">(555)555-5555</p></div>
+                    <p ID="addressT">Charleston, SC 29403</p>
+                    <p id = "emailT">xyshjs@gmail.com</p>
+                    </div>
+                    <hr width="1000" color="black">
+                    
+                </div>
+                 </div>
+                 </div>
+
+                 <div class ="container" id="cv-template">
+                     <div class ="row">
+                        <div class="col-md-2">
+                            <!--first column-->
+                            <p id="psumT">PROFESSIONAL SUMMARY</p>
+                            <BR>
+                                <BR>
+                                     <P id="psT">PROFESSIONAL SKILLS</P>
+                                     <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR> <BR><br><br><br><br><br>
+                                        <P id ="whT">WORK HISTORY</P>
+                                        <BR> <BR> <BR> <BR> <BR> <BR><BR> <BR> <BR> <BR> <BR> <BR>
+                                            <P id="eduT">EDUCATION</P><BR><BR>
+                                            <p id="socT">SOCIAL MEDIA ACCOUNT</p>
+        
+        
+        
+                        </div>
+                        <div class="col-md-8 ">
+                            <!--second column-->
+                            <p id="psumT2">Organized and hardworking professional with two years of retail experience.
+                                Outgoing and supportive worker with skills in communication and time
+                                management. Recognized for dynamic work ethic and team player attitude.
+                                Looking for a growth-oriented position in an administrative role.</p><br>
+                                <p><B>Communications</B>
+                                <BR>
+                                <UL id="psT2">
+                                    <LI>Greeted customers, helped locate merchandise and suggested suitable
+                                        options.</LI>
+                                        <LI>Increased sales 15% by offering advice on purchases and promoting
+                                            additional products.</LI>
+                                            <LI>Interacted with about 50 customers per day by phone or in-person to
+                                                provide information and directed to desired staff members.</LI>
+                                </UL>
+                            <BR> <B>Organization</B><br> <br>
+                                <ul id="psT2">
+                                    <li>Contributed to design and setup of merchandise displays promoting key
+                                        products, creating aesthetically pleasing arrangements to attract
+                                        customer attention.</li>
+                                        <li>Balanced and organized cash register by handling cash, counting change
+                                            and storing coupons.</li>
+                                            <li>Managed promotional in-store signage and displays and re-stocked
+                                                merchandise from returns or dressing rooms</li>
+                               
+                                    </ul>
+                                    <br> <b>Problem-solving</b><br>
+                                    <ul id="psT">
+                                        <li>Lowered theft 40% by watching customers, noticing security risks and
+                                            reporting to manager/security team.</li>
+                                            <li>Approached each problem with fresh mind and analytical strategies to
+                                                quickly resolve concerns.</li>
+                                                <li>Pursued resolutions to achieve complete customer satisfaction,
+                                                    including tracking down hard-to-find merchandise at diverse locations.</li>
+                                    </ul>
+                            </p>
+                            <p id="whT">
+                                <b>Sales Associate</b><br>
+                                <ul id="whT">
+                                    <li>Walmart Charleston,SC</li>
+                                    <LI>September 2019 - Present</LI>
+                                </ul>
+                                <br><b>Retail Sales Associate</b>
+                                <ul id="whT">
+                                    <li>Dick's Sporting Goods Charleston, SC</li>
+                                    <li>July 2018 - August 2019</li>
+                                </ul>
+                                <br><b>Cashier</b>
+                                <ul id="whT">
+                                    <li>Target Charleston,SC</li>
+                                    <LI>May 2016 - July 2018</LI>
+                                </ul>
+                            </p><br> <br>
+                            <P id="eduT">
+                                <B>High School Diploma</B><br>
+                                <ul id="eduT">
+                                    <li>Mercy McAulet Highschool
+                                        Cincinnati, OH</li>
+                                </ul>
+                            </P>
+                            <P id="socT">
+                                <B>LinkedIn</B>
+                                <ul>
+                                    <li><a id="linkedinT" href="#1">https://www.linkedin.com/in/vijay-udhani-1657a9151</a></li>
+                                </ul>
+                            </P>
+
+                        </div>
+                     </div>
+                 </div>
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" 
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" 
+        crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
